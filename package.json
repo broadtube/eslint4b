@@ -10,6 +10,8 @@
     "dist"
   ],
   "dependencies": {
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
     "debug": "^4.0.1",
     "doctrine": "^3.0.0",
     "eslint-scope": "^5.1.1",
@@ -24,7 +26,9 @@
     "levn": "^0.4.1",
     "lodash": "^4.17.21",
     "natural-compare": "^1.4.0",
-    "regexpp": "^3.1.0"
+    "regexpp": "^3.1.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "devDependencies": {
     "@actions/core": "^1.2.4",
@@ -55,6 +59,7 @@
   },
   "scripts": {
     "build": "node scripts/build",
+    "buildeu": "rollup -c",
     "lint": "eslint scripts test karma.conf.js",
     "pretest": "node scripts/build",
     "test": "npm run -s lint && karma start --single-run",
